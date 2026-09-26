@@ -36,7 +36,7 @@ where the analogy breaks. Never hand over the solution (see CLAUDE.md hint ladde
 - camelCase on the wire: base model with
   `ConfigDict(alias_generator=to_camel, populate_by_name=True)`; routes
   serialize by alias. Nullable = present and `null`.
-- Routers per domain in `app/routers/`, included in `app/main.py`. Prefix `/api`.
+- Routers per domain in `app/routers/`, included in `app/main.py`. API routes under `/api`; the Telegram webhook is `/telegram/webhook` (kickoff §6).
 - Config via `pydantic-settings` `Settings`, read once through a cached dependency.
 - SQLAlchemy 2.x style: `Mapped[...]`, `mapped_column`, `select()` — not legacy `Query`.
 - Errors: raise `HTTPException` with precise status codes; validate path params

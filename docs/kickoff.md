@@ -1,9 +1,9 @@
 # Finance tracker backend — kickoff doc
 
 > **Portable, self-contained.** Written inside the `personal-portfolio` repo
-> (alongside [finance-tracker.md](finance-tracker.md),
-> [finance-frontend.md](finance-frontend.md), and
-> [finance-tracker-ledger.md](finance-tracker-ledger.md)), but meant to be
+> (alongside `finance-tracker.md`,
+> `finance-frontend.md`, and
+> `finance-tracker-ledger.md`, which live only in that repo), but meant to be
 > copied into the **new backend repo** as its starting doc — drop it in as
 > `docs/kickoff.md` or similar and treat it as that repo's source of truth
 > from then on. It's a snapshot at hand-off time, not a live sync: once

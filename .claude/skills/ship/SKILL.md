@@ -35,7 +35,7 @@ argument-hint: "[optional commit message]"
 8. **PR:** `gh pr view` — if one exists, just report its URL and the CI status. Otherwise
    `gh pr create` with:
    - Title = conventional-commit style summary.
-   - Body: `## What` (bullets), `## Why` (roadmap item, e.g. "Roadmap PR #1"),
+   - Body: `## What` (bullets), `## Why` (roadmap item, e.g. "Roadmap Task 1"),
      `## How to test` (commands), `## Learned` (1–3 bullets of concepts practiced),
      then the attribution line.
 9. Report: PR URL, checks run, what Claude auto-fixed, and suggest `/review-pr`.

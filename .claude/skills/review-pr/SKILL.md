@@ -12,11 +12,18 @@ belong to /ship).
 
 ## Gather
 
+Parse `$ARGUMENTS`: an optional PR number `<n>` and an optional `--recheck` flag.
+Never pass `--recheck` to `gh`. Without a number, `gh` uses the current branch's PR.
+
 ```bash
-gh pr view $ARGUMENTS --json number,title,body,headRefName,baseRefName,url
-gh pr diff $ARGUMENTS
-gh pr checks $ARGUMENTS
+gh pr view <n> --json number,title,body,headRefName,baseRefName,url
+gh pr diff <n>
+gh pr checks <n>
 ```
+
+**No PR yet** (branch not pushed): review `git diff main...HEAD` plus uncommitted
+changes (`git diff`), run the same checks as CI locally, and print the findings in chat
+instead of posting them. Suggest `/ship` so the next round happens on a real PR.
 
 Read the full changed files, not just hunks — bugs hide in the unchanged context. Load
 the `python-fastapi` skill conventions and the relevant sections of `docs/kickoff.md`
