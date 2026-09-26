@@ -1,0 +1,37 @@
+[project]
+name = "finance-tracker-backend"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi[standard-no-fastapi-cloud-cli]>=0.141.1",
+    "pydantic-settings>=2.15.0",
+]
+
+[dependency-groups]
+dev = [
+    "ipython>=9.17.1",
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+# E/W pycodestyle, F pyflakes, I isort, B bugbear, UP pyupgrade, SIM simplify,
+# N naming, ASYNC async pitfalls, S bandit (security), RUF ruff-specific, FAST fastapi
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "N", "ASYNC", "S", "RUF", "FAST"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # assert is how pytest works
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["app", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
