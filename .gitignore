@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets — never commit real values; see .env.example
+.env
+.env.*
+!.env.example
+
+# Private study material (not ours to publish — repo is public)
+doc/
+
+# OS / editor
+.DS_Store
+.idea/
+
+# Claude Code local-only settings
+.claude/settings.local.json
