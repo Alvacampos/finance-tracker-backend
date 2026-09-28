@@ -25,10 +25,10 @@ Legend: `[ ]` todo · `[~]` in progress · `[x]` merged
 
 ## Phase 0 — Scaffolding
 
-- [~] **Task 0 — Project setup** *(Claude)*: uv project, ruff/mypy/pytest config, CI,
+- [x] **Task 0 — Project setup** *(Claude)*: uv project, ruff/mypy/pytest config, CI,
   VS Code config, CLAUDE.md, skills, this roadmap.
 
-- [ ] **Task 1 — Hello FastAPI + health check** *(you)*
+- [~] **Task 1 — Hello FastAPI + health check** *(you)*
   - Learn: [FastAPI First Steps](https://fastapi.tiangolo.com/tutorial/first-steps/),
     [Testing](https://fastapi.tiangolo.com/tutorial/testing/),
     refresher on [type hints](https://docs.python.org/3/library/typing.html) and modules/packages.
@@ -140,4 +140,5 @@ monthly digest posted by the bot.
 
 ## Session log
 
-- 2026-09-26 — Kickoff. Project setup (Task 0). Next: Task 1.
+- 2026-09-26 — Kickoff. Task 0 merged (PR #1). Started Task 1.
+- 2026-09-28 — Task 1: app, health endpoint, first test. Covered decorators, Pydantic `Literal` + defaults, pytest basics, `app/` vs `src/` layout.
