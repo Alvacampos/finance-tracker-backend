@@ -26,18 +26,20 @@ the Claude API. Usefulness is secondary. Default behavior:
   higher-order functions, Pydantic ≈ Zod, `async def` ≈ `async function` but with a
   different event-loop story). Call out where the analogy breaks.
 - Communicate in **English, concise**. No long preambles.
-- Keep [docs/roadmap.md](docs/roadmap.md) current: tick items when a PR merges, add a
+- Keep [docs/roadmap.md](docs/roadmap.md) current: tick milestones when their PR merges, add a
   session-log line at the end of a working session.
 
 ## Workflow (mimics a real team)
 
-- Never commit to `main`. One feature branch + one PR per roadmap deliverable.
+- Never commit to `main`. **One milestone = one branch = one PR** (one demoable
+  outcome, roughly 150–400 lines of the user's code). Steps inside a milestone are
+  commits, not PRs. No tiny PRs, no giant ones.
   Branch names: `feat/…`, `fix/…`, `chore/…`, `docs/…`.
 - Conventional-commit messages (`feat: add health endpoint`).
 - `/ship` — lint, type-check, test, commit, push, open/update PR.
 - `/review-pr` — adversarial review of the open PR; findings go on the PR as a comment,
   the user fixes them. Claude doesn't fix review findings in app code.
-- `/next` — pick up the next roadmap item and set up the exercise.
+- `/next` — pick up the next roadmap milestone and set up its steps.
 - The user merges PRs themselves.
 
 ## Commands

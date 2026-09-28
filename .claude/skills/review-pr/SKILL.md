@@ -27,7 +27,7 @@ instead of posting them. Suggest `/ship` so the next round happens on a real PR.
 
 Read the full changed files, not just hunks — bugs hide in the unchanged context. Load
 the `python-fastapi` skill conventions and the relevant sections of `docs/kickoff.md`
-and `docs/roadmap.md` (the PR's acceptance criteria).
+and `docs/roadmap.md` (the milestone's steps are the acceptance criteria).
 
 ## Attack surface — try to break it
 
@@ -44,10 +44,19 @@ and `docs/roadmap.md` (the PR's acceptance criteria).
 5. **Python idioms & design:** blocking calls in `async def`, mutable default args,
    broad `except`, leaking ORM objects, missing type precision, naming, dead code,
    things that'll hurt in the next phase.
-6. **Acceptance criteria** from the roadmap item — anything missing?
+6. **Acceptance criteria** from the roadmap milestone — anything missing?
 
 Only report things you can justify with a concrete failure scenario or a real
 convention. No padding; zero findings is a valid result — but look hard first.
+
+**Calibrate to *now*.** Ask of each finding: "does this break or mislead something in
+this milestone or the one it unblocks?"
+- Yes → it goes in the review (`blocker`/`major` request changes; `minor` is the user's call).
+- No, it only matters later (a future phase, a hypothetical tool, a pattern that only
+  pays off at scale) → **don't put it in the review.** Add it as a one-line step or note
+  to the roadmap milestone where it will matter, and mention that in the chat summary.
+- Keep the review short: at most ~5 findings. Many nits on a small PR is noise, and
+  costs the user time and tokens.
 
 ## Report
 
@@ -59,7 +68,8 @@ What's wrong + concrete scenario that breaks it.
 Hint: concept/doc link or leading question (hint ladder rung 1–2, NOT the fix).
 ```
 
-Then a one-line verdict: `Changes requested` or `Ready to merge`.
+Then a one-line verdict: `Changes requested` (only for blocker/major findings) or
+`Ready to merge` (minor findings may still be listed as optional).
 
 Post it on the PR: `gh pr review <n> --comment --body-file <tmpfile>` (GitHub doesn't
 allow requesting changes on your own PR, so comment). Also print a short summary in chat.
@@ -69,4 +79,4 @@ allow requesting changes on your own PR, so comment). Also print a short summary
 Fetch the new diff, verify each previous finding individually (fixed / partially /
 not fixed — with evidence), look for regressions the fixes introduced, post a follow-up
 comment. When everything's resolved: say it's ready for the user to merge, and after
-they merge, tick the item `[x]` in `docs/roadmap.md` on the next branch.
+they merge, tick the milestone `[x]` in `docs/roadmap.md` on the next branch.
